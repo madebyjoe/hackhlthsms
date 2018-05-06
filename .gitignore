@@ -1,0 +1,4 @@
+app/.DS_Store
+app/node_modules/
+app/.env
+intent_model/__py_cache__
