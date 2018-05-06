@@ -1,5 +1,6 @@
 const { promisify } = require("util");
 const request = require("request");
+const rp = require("request-promise-native");
 const cheerio = require("cheerio");
 const graph = require("fbgraph");
 const { LastFmNode } = require("lastfm");
@@ -48,17 +49,35 @@ exports.getApi = (req, res) => {
 /**
  * POST /api/sms
  */
-exports.handleSms = (req, res) => {
+exports.handleSms = async (req, res, next) => {
   const twiml = new MessagingResponse();
   console.log(req.body.Body);
-  twiml.message("The Robots are coming! Head for the hills!");
 
-  res.writeHead(200, { "Content-Type": "text/xml" });
-  res.end(twiml.toString());
+  const options = {
+    method: "POST",
+    uri: "http://localhost:8000/classify",
+    body: {
+      sentence: req.body.Body
+    },
+    json: true // Automatically stringifies the body to JSON
+  };
+
+  try {
+    const intent = await rp(options);
+    console.log("intent", intent);
+    twiml.message(
+      `${intent.intent} The Robots are coming! Head for the hills!`
+    );
+
+    res.writeHead(200, { "Content-Type": "text/xml" });
+    res.end(twiml.toString());
+  } catch (err) {
+    return next(err);
+  }
 };
 
 /**
- * GET /api/softheo
+ * GET /api/softheon
  */
 exports.createWallet = async (req, res, next) => {
   const token =
