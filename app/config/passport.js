@@ -156,6 +156,61 @@ passport.use(
 );
 
 /**
+ * Sign in with Softheon
+ */
+passport.use(
+  "softheon",
+  new OAuth2Strategy(
+    {
+      authorizationURL: "https://hack.softheon.io/oauth2/connect/token",
+      tokenURL: "https://hack.softheon.io/oauth2/connect/token",
+      clientID: process.env.SOFTHEON_ID,
+      clientSecret: process.env.SOFTHEON_SECRET,
+      callbackURL: process.env.SOFTHEON_CALLBACK_URL
+    },
+    (req, accessToken, refreshToken, profile, done) => {
+      User.findOrCreate({ phoneNumber: profile.phoneNumber }, (err, user) => {
+        if (err) {
+          return done(err);
+        }
+        user.tokens.push({ kind: "softheon", accessToken });
+        user.save(err => {
+          done(err, user);
+        });
+      });
+      // if (req.user) {
+      //   User.findOne(
+      //     { phoneNumber: profile.phoneNumber },
+      //     (err, existingUser) => {
+      //       if (existingUser) {
+      //         req.flash("errors", {
+      //           msg:
+      //             "There is aready a Softheon account that belongs to you. Sign in with that account or delete it, then link it with your current account."
+      //         });
+      //         done(err);
+      //       } else {
+      //         User.findById(req.user.id, (err, user) => {
+      //           if (err) {
+      //             return done(err);
+      //           }
+      //           user.phoneNumber = profile.phoneNumber;
+      //           user.tokens.push({ kind: "softheon", accessToken });
+      //           user.save(err => {
+      //             req.flash("info", {
+      //               msg: "Softheon account has been linked."
+      //             });
+      //             done(err, user);
+      //           });
+      //         });
+      //       }
+      //     }
+      //   );
+      // }
+    }
+  )
+);
+
+/**
  * Sign in with GitHub.
  */
 passport.use(

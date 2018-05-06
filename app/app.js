@@ -178,6 +178,7 @@ app.get(
   passportConfig.isAuthorized,
   apiController.getSteam
 );
+app.get("/api/softheon", apiController.createWallet);
 app.get("/api/stripe", apiController.getStripe);
 app.post("/api/stripe", apiController.postStripe);
 app.get("/api/scraping", apiController.getScraping);
@@ -256,6 +257,16 @@ app.get("/api/google-maps", apiController.getGoogleMaps);
 /**
  * OAuth authentication routes. (Sign in)
  */
+app.get("/auth/softheon", passport.authenticate("softheon"));
+app.get(
+  "/auth/softheon/callback",
+  passport.authenticate("softheon", {
+    failureRedirect: "/login"
+  }),
+  (req, res) => {
+    res.redirect(req.session.returnTo || "/");
+  }
+);
 app.get("/auth/instagram", passport.authenticate("instagram"));
 app.get(
   "/auth/instagram/callback",

@@ -11,6 +11,7 @@ const twilio = require("twilio")(
   process.env.TWILIO_SID,
   process.env.TWILIO_TOKEN
 );
+const { SoftheonWalletApi } = require("../lib/softheon/softheonWalletAPI");
 const Linkedin = require("node-linkedin")(
   process.env.LINKEDIN_ID,
   process.env.LINKEDIN_SECRET,
@@ -41,6 +42,67 @@ exports.getApi = (req, res) => {
     title: "API Examples"
   });
 };
+
+/**
+ * GET /api/softheo
+ */
+exports.createWallet = async (req, res, next) => {
+  const token =
+    "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2RkRDMUQ4RDlGRDYyQTZFNjZFQzE4MEVENzQ1NDZBRUI0RTBEODMiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJkdjNCMk5uOVlxYm1ic0dBN1hSVWF1dE9EWU0ifQ.eyJuYmYiOjE1MjU1ODU2NDgsImV4cCI6MTUyNTU4OTI0OCwiaXNzIjoiaHR0cHM6Ly9oYWNrLnNvZnRoZW9uLmlvL29hdXRoMiIsImF1ZCI6WyJodHRwczovL2hhY2suc29mdGhlb24uaW8vb2F1dGgyL3Jlc291cmNlcyIsInBheW1lbnRhcGkiXSwiY2xpZW50X2lkIjoiMjY0M2I5ZTctM2E2YS00MjBiLTk2M2UtMTUzNDJlYzJkMDkzIiwic2NvcGUiOlsicGF5bWVudGFwaSJdfQ.ez-SuyU3nk13Qmz2wbJCxbpiLI_-qEHM5-pRvnAoW1xiIoNz3c8K3cc1SBUqghbQ60sktmssYI55rOzpfuvOfGkMBJTpDpVMGdKYmVcDoCO-g_opBZv-gJF6xH2af4iaKCc46XAuJNfgTl9TQTuGeBexfTKI0oNjZCl74OXH9dpdJbpr8Ax6V2CLx2Gwl-O6J6hddvRS4CSFMLH5slW_Ho3bIqKBgI4YE_jKM4U_UrT7IRgd6znd46Yp0_GcjqU1ynyRXcegaNrbZO7eclXdtaxyS7BWO0B5kuZRCfTv7YW7k4MWz4yJhKVKzpVSouLCQsV5aAEvHkFwnP0SAYxPhSvaWZzugGc1aAqRsn9-lTBsLTrU6Q1rDLEvWXOxARbmrDmMnC52-Ntdz4idEQSCgZyVhCc9iPh5IwEIV_XWsf6Sf4dlkI4Xhe3j5Jnl4Gz77PmBp4nnrbUIzrABG3WDd1DGodtKONKQlSTyJhO-LC8cMjvLiE-71iXoOtuH0YfL7YRN_QIAunq4gl1cs2S26jtZDs5-yAkellxvkNNgRf68GteqzfVdKYx8L2GZ5TkOA-fxzppUmAH1DmwI7F1mwoA6pL_ZRkVrwbAcEJKJMz2zQpW9ctfvrxcMAYkgfZnM3GBjYXObgTUtmTCH4ml3wr5BFTz6fLFuuClab91i2c8";
+
+  request.post(
+    "https://hack.softheon.io/api/payments/v1/wallet",
+    { headers: { Authorization: `Bearer ${token}` } },
+    (err, request, body) => {
+      if (err) {
+        return next(err);
+      }
+      console.log("status code", request);
+      if (request.statusCode !== 201) {
+        req.flash("errors", { msg: JSON.parse(body).message });
+        return res.redirect("/api/softheon");
+      }
+      req.flash("success", { msg: "Wallet created" });
+    }
+  );
+};
+
+// exports.getSoftheonToken = (req, res, next) => {
+//   const qs = require("querystring");
+//   const http = require("https");
+
+//   const options = {
+//     method: "POST",
+//     hostname: ["hack", "softheon", "io"],
+//     path: ["oauth2", "connect", "token"],
+//     headers: {
+//       "Content-Type": "application/x-www-form-urlencoded"
+//     }
+//   };
+
+//   // let req = http.request(options, function(res) {
+//   //   let chunks = [];
+
+//   //   res.on("data", function(chunk) {
+//   //     chunks.push(chunk);
+//   //   });
+
+//   //   res.on("end", function() {
+//   //     var body = Buffer.concat(chunks);
+//   //     console.log(body.toString());
+//   //   });
+//   // });
+
+//   req.write(
+//     qs.stringify({
+//       grant_type: "client_credentials",
+//       scope: "paymentapi",
+//       client_id: process.env.SOFTHEON_ID,
+//       client_secret: process.env.SOFTHEON_SECRET
+//     })
+//   );
+//   req.end();
+// };
 
 /**
  * GET /api/foursquare
