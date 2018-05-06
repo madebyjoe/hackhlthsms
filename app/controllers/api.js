@@ -14,7 +14,6 @@ const twilio = require("twilio")(
 );
 const MessagingResponse = require("twilio").twiml.MessagingResponse;
 
-const { SoftheonWalletApi } = require("../lib/softheon/softheonWalletAPI");
 const Linkedin = require("node-linkedin")(
   process.env.LINKEDIN_ID,
   process.env.LINKEDIN_SECRET,
@@ -36,7 +35,11 @@ const { Venues, Users } = require("node-foursquare")({
   }
 });
 
-/**
+const SoftheonWalletApi = {
+  make_payment: () => new Promise(resolve => setTimeout(resolve, 4000))
+};
+
+/*
  * GET /api
  * List of API examples.
  */
@@ -50,35 +53,65 @@ exports.getApi = (req, res) => {
  * POST /api/sms
  */
 exports.handleSms = async (req, res, next) => {
-  const twiml = new MessagingResponse();
+  let twiml = new MessagingResponse();
   console.log(req.body.From);
 
-  const options = {
-    method: "POST",
-    uri: "http://localhost:8000/classify",
-    body: {
-      sentence: req.body.Body
-    },
-    json: true // Automatically stringifies the body to JSON
-  };
-
-  try {
-    const intent = await rp(options);
-    console.log("intent", intent);
-    if (intent.intent == "make_payment") {
-      twiml.message(
-        `You have a balance of $98.54. Would you like to pay this balance?`
-      );
-    } else {
-      twiml.message(
-        `${intent.intent} The Robots are coming! Head for the hills!`
-      );
-    }
-
+  if (req.body.Body == "yes" || req.body.Body == "Yes") {
+    console.log("yes");
+    twiml.message(`What is the amount you would like to pay?`);
     res.writeHead(200, { "Content-Type": "text/xml" });
     res.end(twiml.toString());
-  } catch (err) {
-    return next(err);
+  } else if (req.body.Body == "confirm" || req.body.Body == "Confirm") {
+    console.log("confirm");
+    const done = await SoftheonWalletApi.make_payment();
+    twiml.message("Okay, payment confirmed!");
+    res.writeHead(200, { "Content-Type": "text/xml" });
+    res.end(twiml.toString());
+  } else if (!isNaN(parseFloat(req.body.Body))) {
+    console.log("number");
+
+    twiml.message(
+      `Please confirm you would like to pay ${
+        req.body.Body
+      } with your default payment method`
+    );
+    res.writeHead(200, { "Content-Type": "text/xml" });
+    res.end(twiml.toString());
+  } else {
+    console.log("classify");
+
+    const options = {
+      method: "POST",
+      uri: "http://localhost:8000/classify",
+      body: {
+        sentence: req.body.Body
+      },
+      json: true // Automatically stringifies the body to JSON
+    };
+
+    try {
+      const intent = await rp(options);
+      console.log("intent", intent);
+      if (intent.intent == "make_payment") {
+        twiml.message(
+          `You have a balance of $98.54. Would you like to pay this balance?`
+        );
+        // message.body(
+        //   `You have a balance of $98.54. Would you like to pay this balance?`
+        // );
+        // message.media(
+        //   "https://farm8.staticflickr.com/7090/6941316406_80b4d6d50e_z_d.jpg"
+        // );
+      } else {
+        twiml.message(
+          `${intent.intent} The Robots are coming! Head for the hills!`
+        );
+      }
+      res.writeHead(200, { "Content-Type": "text/xml" });
+      res.end(twiml.toString());
+    } catch (err) {
+      return next(err);
+    }
   }
 };
 
