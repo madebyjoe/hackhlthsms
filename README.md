@@ -1,11 +1,19 @@
-/app is the nodeJS Server
-/intent_model is our Python Machine Learning Server
+* /app is the nodeJS Server
+* /intent_model is our Python Machine Learning Server
 
 To run Monty, you have to run both servers.
 
 # Node Server
 
 Node server that connects to twilio and Softheon APIs
+
+1.  To install all dependencies run:
+
+```
+npm install
+```
+
+2.  Run server
 
 ```
 node app.js
