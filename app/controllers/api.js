@@ -50,6 +50,26 @@ exports.getApi = (req, res) => {
 };
 
 /**
+ *  POST /api/notify
+ */
+
+exports.sendSmsNotification = (req, res, next) => {
+  const message = {
+    to: "+14083345956",
+    from: "+12062023476",
+    body:
+      "This is a reminder that you have a bill of $640.45 due on May 10, 2018. To avoid a late fee of $45, would you like to pay now?"
+  };
+  twilio.messages.create(message, (err, responseData) => {
+    if (err) {
+      return next(err.message);
+    }
+    req.flash("success", { msg: `Text sent to ${responseData.to}.` });
+    res.redirect("/api/twilio");
+  });
+};
+
+/**
  * POST /api/sms
  */
 exports.handleSms = async (req, res, next) => {
@@ -71,7 +91,7 @@ exports.handleSms = async (req, res, next) => {
     console.log("number");
 
     twiml.message(
-      `Please confirm you would like to pay ${
+      `Please confirm you would like to pay $${
         req.body.Body
       } with your default payment method`
     );
@@ -102,10 +122,30 @@ exports.handleSms = async (req, res, next) => {
         // message.media(
         //   "https://farm8.staticflickr.com/7090/6941316406_80b4d6d50e_z_d.jpg"
         // );
-      } else {
+      } else if (intent.intent == "history") {
+        twiml.message("Here is your recent transaction history");
+      } else if (intent.intent == "remove_payment") {
+        twiml.message("You need multiple payment methods to remove one");
+      } else if (intent.intent == "summary") {
+        twiml.message("Here is your account overview:");
+      } else if (intent.intent == "autopay") {
         twiml.message(
-          `${intent.intent} The Robots are coming! Head for the hills!`
+          "Sure I can help set your autopay up. Would you like to use your default payment method?"
         );
+      } else if (intent.intent == "outstanding_balance") {
+        twiml.message("You have an outstanding balance of $0");
+      } else if (intent.intent == "add_payment") {
+        twiml.message(
+          "I can definitely help you with that. Would you like to add a credit card or a bank account?"
+        );
+      } else if (intent.intent == "cancel") {
+        twiml.message("Sure. Is there anything else I can help you with?");
+      } else if (intent.intent == "help") {
+        twiml.message(
+          "I can help you making a payment, viewing history, setting up autopay, and adding payment methods"
+        );
+      } else {
+        twiml.message(`${intent.intent}`);
       }
       res.writeHead(200, { "Content-Type": "text/xml" });
       res.end(twiml.toString());

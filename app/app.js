@@ -186,6 +186,7 @@ app.post("/api/stripe", apiController.postStripe);
 app.get("/api/scraping", apiController.getScraping);
 app.get("/api/twilio", apiController.getTwilio);
 app.post("/api/twilio", apiController.postTwilio);
+app.get("/api/notify", apiController.sendSmsNotification);
 app.get("/api/clockwork", apiController.getClockwork);
 app.post("/api/clockwork", apiController.postClockwork);
 app.get(
