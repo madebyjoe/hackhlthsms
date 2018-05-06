@@ -46,11 +46,11 @@ exports.getApi = (req, res) => {
 };
 
 /**
- * POST /sms
+ * POST /api/sms
  */
-exports.handleSms = () => {
+exports.handleSms = (req, res) => {
   const twiml = new MessagingResponse();
-
+  console.log(req.body.Body);
   twiml.message("The Robots are coming! Head for the hills!");
 
   res.writeHead(200, { "Content-Type": "text/xml" });
