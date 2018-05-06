@@ -51,7 +51,7 @@ exports.getApi = (req, res) => {
  */
 exports.handleSms = async (req, res, next) => {
   const twiml = new MessagingResponse();
-  console.log(req.body.Body);
+  console.log(req.body.From);
 
   const options = {
     method: "POST",
@@ -65,9 +65,15 @@ exports.handleSms = async (req, res, next) => {
   try {
     const intent = await rp(options);
     console.log("intent", intent);
-    twiml.message(
-      `${intent.intent} The Robots are coming! Head for the hills!`
-    );
+    if (intent.intent == "make_payment") {
+      twiml.message(
+        `You have a balance of $98.54. Would you like to pay this balance?`
+      );
+    } else {
+      twiml.message(
+        `${intent.intent} The Robots are coming! Head for the hills!`
+      );
+    }
 
     res.writeHead(200, { "Content-Type": "text/xml" });
     res.end(twiml.toString());
@@ -81,7 +87,7 @@ exports.handleSms = async (req, res, next) => {
  */
 exports.createWallet = async (req, res, next) => {
   const token =
-    "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2RkRDMUQ4RDlGRDYyQTZFNjZFQzE4MEVENzQ1NDZBRUI0RTBEODMiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJkdjNCMk5uOVlxYm1ic0dBN1hSVWF1dE9EWU0ifQ.eyJuYmYiOjE1MjU1ODU2NDgsImV4cCI6MTUyNTU4OTI0OCwiaXNzIjoiaHR0cHM6Ly9oYWNrLnNvZnRoZW9uLmlvL29hdXRoMiIsImF1ZCI6WyJodHRwczovL2hhY2suc29mdGhlb24uaW8vb2F1dGgyL3Jlc291cmNlcyIsInBheW1lbnRhcGkiXSwiY2xpZW50X2lkIjoiMjY0M2I5ZTctM2E2YS00MjBiLTk2M2UtMTUzNDJlYzJkMDkzIiwic2NvcGUiOlsicGF5bWVudGFwaSJdfQ.ez-SuyU3nk13Qmz2wbJCxbpiLI_-qEHM5-pRvnAoW1xiIoNz3c8K3cc1SBUqghbQ60sktmssYI55rOzpfuvOfGkMBJTpDpVMGdKYmVcDoCO-g_opBZv-gJF6xH2af4iaKCc46XAuJNfgTl9TQTuGeBexfTKI0oNjZCl74OXH9dpdJbpr8Ax6V2CLx2Gwl-O6J6hddvRS4CSFMLH5slW_Ho3bIqKBgI4YE_jKM4U_UrT7IRgd6znd46Yp0_GcjqU1ynyRXcegaNrbZO7eclXdtaxyS7BWO0B5kuZRCfTv7YW7k4MWz4yJhKVKzpVSouLCQsV5aAEvHkFwnP0SAYxPhSvaWZzugGc1aAqRsn9-lTBsLTrU6Q1rDLEvWXOxARbmrDmMnC52-Ntdz4idEQSCgZyVhCc9iPh5IwEIV_XWsf6Sf4dlkI4Xhe3j5Jnl4Gz77PmBp4nnrbUIzrABG3WDd1DGodtKONKQlSTyJhO-LC8cMjvLiE-71iXoOtuH0YfL7YRN_QIAunq4gl1cs2S26jtZDs5-yAkellxvkNNgRf68GteqzfVdKYx8L2GZ5TkOA-fxzppUmAH1DmwI7F1mwoA6pL_ZRkVrwbAcEJKJMz2zQpW9ctfvrxcMAYkgfZnM3GBjYXObgTUtmTCH4ml3wr5BFTz6fLFuuClab91i2c8";
+    "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2RkRDMUQ4RDlGRDYyQTZFNjZFQzE4MEVENzQ1NDZBRUI0RTBEODMiLCJ0eXAiOiJKV1QiLCJ4NXQiOiJkdjNCMk5uOVlxYm1ic0dBN1hSVWF1dE9EWU0ifQ.eyJuYmYiOjE1MjU2MjI2OTgsImV4cCI6MTUyNTYyNjI5OCwiaXNzIjoiaHR0cHM6Ly9oYWNrLnNvZnRoZW9uLmlvL29hdXRoMiIsImF1ZCI6WyJodHRwczovL2hhY2suc29mdGhlb24uaW8vb2F1dGgyL3Jlc291cmNlcyIsInBheW1lbnRhcGkiXSwiY2xpZW50X2lkIjoiMjY0M2I5ZTctM2E2YS00MjBiLTk2M2UtMTUzNDJlYzJkMDkzIiwic2NvcGUiOlsicGF5bWVudGFwaSJdfQ.WSXglAscyPEQO8g7QXgk53H9ZDDn3YMJvsjYOpFBDccQmNJNceZ9dzczj-9drevXPr7mldQQ1j12hbx4uSITVSHKOw2qEmMnqyekJz_Y3pm3sUHpFRF4beNJnmzj8SK1vRcyPIAqkTmv_h0N4668AQp6fiSg3hJznEk1xUeRmaqcCol55hi-9IMcHFdihB8X6L05mcgSyC2HlAAShK2v8WRutLwNPNNNh7rVK1PEv8VIlSH48J0CbOMJfy-QF7nkMyrPed0BdM-E3_OL26vP5IoVrJSRosGiaX1ZRBMjSGl51LENu4uBMBDoF0mSPK6d70EuxfSHtIgTfCjPnX2ASCXFAJ_uVNOTFMzZxxxkZQwgIV9uDgCbu6C9JaoO3nhmolBqQd5De8Vs_oQt1IOy4ktQ1VvLnHP5hhHSI_iCxIrgph_mt4WEuKS8GfOZZmM_P1ZjOlExv2ooB5Hme8Kvhxzhv4KNROnS2VRhqTht7tViZnnWkLJrC6OqHwKYy609d2-ubzGlnnpXQmHDvfmg2B_JtSqIzpFAZDnUKCylXIIE4raua1bkpjfyL6lsqy5RsSdas8rX3UuptmhpPQatIHj8ATQJV_PsWexmTwfaah3kdyWVTKKa_2d6L0oGLLE47tlWMXFnVPyXtADbMlZOcNbChxXPZN_zx5TfwGihi54";
 
   request.post(
     "https://hack.softheon.io/api/payments/v1/wallet",

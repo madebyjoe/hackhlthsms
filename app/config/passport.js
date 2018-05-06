@@ -162,7 +162,7 @@ passport.use(
   "softheon",
   new OAuth2Strategy(
     {
-      authorizationURL: "https://hack.softheon.io/oauth2/connect/token",
+      authorizationURL: "https://hack.softheon.io/oauth2/connect/authorize",
       tokenURL: "https://hack.softheon.io/oauth2/connect/token",
       clientID: process.env.SOFTHEON_ID,
       clientSecret: process.env.SOFTHEON_SECRET,
