@@ -1,0 +1,759 @@
+Can I make a payment?,make_payment
+Submit a payment.,make_payment
+make a payment,make_payment
+can I pay someone?,make_payment
+I'd like to pay someone.,make_payment
+I would like to pay someone.,make_payment
+I'd like to make a payment,make_payment
+I would like to make a payment.,make_payment
+Can I send some money?,make_payment
+Send some money.,make_payment
+I would like to send some money.,make_payment
+I'd like to send some money.,make_payment
+Can I pay my balance?,make_payment
+pay my balance.,make_payment
+I'd like to pay my balance.,make_payment
+I would like to pay my balance.,make_payment
+Can I submit a payment?,make_payment
+I would like to submit a payment,make_payment
+I'd like to submit a payment,make_payment
+send cash.,make_payment
+send some cash,make_payment
+can I send some cash,make_payment
+pay my statment,make_payment
+I'd like to pay my outstanding balance,make_payment
+I'd like to clear my outstanding balance,make_payment
+make an cash transfer,make_payment
+I want to make a payment,make_payment
+I would like to make a payment,make_payment
+I want make payment,make_payment
+make payment,make_payment
+I'll make a payment,make_payment
+I'd like to make payment,make_payment
+I want to make payment,make_payment
+make payment for me,make_payment
+please make payment,make_payment
+please make a payment,make_payment
+make a payment for me,make_payment
+I want to pay,make_payment
+I'd like to pay,make_payment
+pay,make_payment
+payment,make_payment
+pay card,make_payment
+pay balance,make_payment
+pay account,make_payment
+pay due,make_payment
+use my card,make_payment
+pay my card,make_payment
+pay my balance,make_payment
+pay my account,make_payment
+pay what's due,make_payment
+pay what is due,make_payment
+could i make a payment,make_payment
+could you help me pay my account,make_payment
+will you help me make a payment,make_payment
+could you make a payment for me,make_payment
+will you process my payment,make_payment
+process payment,make_payment
+won't you help me make a payment,make_payment
+would you help with payment,make_payment
+help me pay my account,make_payment
+help pay my account,make_payment
+help pay my balance,make_payment
+help paying my balance,make_payment
+help paying my account,make_payment
+help with paying balance,make_payment
+help with paying account,make_payment
+pay through credit card,make_payment
+pay through bank account,make_payment
+paying through credit card,make_payment
+paying through bank account,make_payment
+pay by credit card,make_payment
+pay by bank account,make_payment
+payment by credit card,make_payment
+payment by bank account,make_payment
+pay by card,make_payment
+paying through card,make_payment
+paying by card,make_payment
+pay by bank,make_payment
+paying by bank,make_payment
+payment by bank  ,make_payment
+payment through bank,make_payment
+payment through card,make_payment
+paying card,make_payment
+card payment,make_payment
+credit card payment,make_payment
+paying insurance,make_payment
+paying health insurance,make_payment
+paying statement,make_payment
+I want to pay the amount on my statement,make_payment
+I want to pay the statement on my account,make_payment
+I want to pay my statement,make_payment
+pay my statement,make_payment
+paying my statement,make_payment
+paying existing balance,make_payment
+pay existing balance,make_payment
+payment for existing balance,make_payment
+payment for statement balance,make_payment
+paying statement balance,make_payment
+Show me my summary,summary
+Show me my stats,summary
+Show me my status,summary
+What is my current situation,summary
+What is my current status,summary
+How am I doing?,summary
+What is my summary?,summary
+Can I see my summary,summary
+Can i see my stats,summary
+can i see my status,summary
+show me all the things,summary
+Give me an overview,summary
+show me my overview,summary
+show me an overview,summary
+what's the ten thousand foot view,summary
+what's my bird's eye view?,summary
+summary,summary
+status,summary
+stats,summary
+my summary,summary
+my status,summary
+my stats,summary
+overview,summary
+my overview,summary
+show my a high level view,summary
+what's going on in your world?,summary
+Can I view a summary of my account?,summary
+Can I see the summary of my account?,summary
+Account details,summary
+What does my account look like,summary
+What is the status of my account,summary
+Status of my account,summary
+My account status,summary
+What are the details of my account,summary
+What are the account details,summary
+Can I see my account details,summary
+Can I see account details,summary
+can I see account status,summary
+Can I see account settings,summary
+account settings,summary
+default setting,summary
+default settings,summary
+default account settings,summary
+default payment settings,summary
+payment settings,summary
+Can i see payment settings,summary
+can i see the default payment settings,summary
+can i see default payment settings,summary
+can i see default account settings,summary
+can i see default account payment settings,summary
+see payment settings,summary
+see account details,summary
+see account settings,summary
+see default settings,summary
+see account summary,summary
+see payment details,summary
+see details of account,summary
+see details for account,summary
+can i see the account details,summary
+can i see the details of my account,summary
+show my account details,summary
+show me account details,summary
+show me my account details,summary
+show my account summary,summary
+show my account settings,summary
+show me my account settings,summary
+show my default settings,summary
+show me my default settings,summary
+show me my account summary,summary
+show my default options ,summary
+show me my default options,summary
+show default options,summary
+show default settings,summary
+review account details,summary
+review account summary,summary
+review settings,summary
+review default settings,summary
+review my settings,summary
+review account settings,summary
+review account status,summary
+review my account status,summary
+review my account settings,summary
+review default setting ,summary
+view account summary,summary
+view account details,summary
+view settings,summary
+view default settings,summary
+view default options,summary
+review default options,summary
+view summary,summary
+view my account details,summary
+view my account summary,summary
+account overview,summary
+how far am i in the hole?,outstanding_balance
+what's my outstanding balance,outstanding_balance
+what is my outstanding balance,outstanding_balance
+what's my balance,outstanding_balance
+what is my balance,outstanding_balance
+how much do I owe,outstanding_balance
+how much do I currently owe,outstanding_balance
+how much money do I owe,outstanding_balance
+when is my next balance due?,outstanding_balance
+what is due next?,outstanding_balance
+what's left on my tab?,outstanding_balance
+what is the amount on my tab?,outstanding_balance
+what amount do I owe?,outstanding_balance
+how much do I have left to pay,outstanding_balance
+how much do I still have left to pay,outstanding_balance
+how much do I have to pay,outstanding_balance
+what's the last bill for?,outstanding_balance
+how much was the last bill?,outstanding_balance
+how much is the current bill?,outstanding_balance
+what is the current amount on the bill?,outstanding_balance
+I would like to see my current balance,outstanding_balance
+I would like to see my current outstanding balance,outstanding_balance
+I would like to see my outstanding balance,outstanding_balance
+I'd like to see my current balance.,outstanding_balance
+I'd like to see my current outstanding balance.,outstanding_balance
+What is my balance?,outstanding_balance
+My balance,outstanding_balance
+balance ,outstanding_balance
+account balance,outstanding_balance
+what is my account balance,outstanding_balance
+current balance,outstanding_balance
+current account balance,outstanding_balance
+what is my current balance,outstanding_balance
+what is the current balance,outstanding_balance
+what is the balance,outstanding_balance
+what is the account balance,outstanding_balance
+what is the balance on my account,outstanding_balance
+what is my balance on the account,outstanding_balance
+what is my current balance on the account,outstanding_balance
+what is my current balance on my account,outstanding_balance
+what is the outstanding balance,outstanding_balance
+what is the outstanding balance on my account,outstanding_balance
+what is my oustanding balance on the account,outstanding_balance
+what is my oustanding balance on account,outstanding_balance
+view balance,outstanding_balance
+view outstanding balance,outstanding_balance
+view account balance,outstanding_balance
+see balance,outstanding_balance
+see account balance,outstanding_balance
+see current balance,outstanding_balance
+see outstanding balance,outstanding_balance
+view current balance,outstanding_balance
+review balance,outstanding_balance
+review current balance,outstanding_balance
+review outstanding balance,outstanding_balance
+review account balance,outstanding_balance
+check balance,outstanding_balance
+check outstanding balance,outstanding_balance
+check account balance,outstanding_balance
+check current balance,outstanding_balance
+show my balance,outstanding_balance
+show me my balance,outstanding_balance
+show current balance,outstanding_balance
+show account balance,outstanding_balance
+show outstanding balance,outstanding_balance
+preview balance,outstanding_balance
+preview account balance,outstanding_balance
+preview outstanding balance,outstanding_balance
+preview existing balance,outstanding_balance
+preview current balance,outstanding_balance
+existing balance,outstanding_balance
+check existing balance,outstanding_balance
+review existing balance,outstanding_balance
+review balance now,outstanding_balance
+check balance now,outstanding_balance
+balance now,outstanding_balance
+show balance ,outstanding_balance
+show balance now,outstanding_balance
+preview balance now,outstanding_balance
+what is my existing balance,outstanding_balance
+what is the existing balance,outstanding_balance
+how to see my balance,outstanding_balance
+how to see my current balance,outstanding_balance
+how to see outstanding balance,outstanding_balance
+how to see existing balance,outstanding_balance
+how to see account balance,outstanding_balance
+how to see balance,outstanding_balance
+how to view balance,outstanding_balance
+how to view my currnent balance,outstanding_balance
+how to view my outstanding balance,outstanding_balance
+how to view my existing balance,outstanding_balance
+how to view my account balance,outstanding_balance
+how to check my current balance,outstanding_balance
+how to check my existing balance,outstanding_balance
+how to check my balance,outstanding_balance
+how to check my oustanding balance,outstanding_balance
+Show me my recent transactions,history
+Show me my recent payments,history
+Who have I paid recently?,history
+What have I spent money on recently?,history
+When did I last make a payment?,history
+When was the last time I made a payment?,history
+What is my history?,history
+What is my payment history?,history
+What is my transaction history?,history
+What are my last three transactions,history
+What was my last purchase?,history
+What was my last payment?,history
+How much was my last payment for?,history
+How much was my last transaction for?,history
+What was my last transaction?,history
+What has happened recently?,history
+Give me a synopsis of what happened while I was gone.,history
+Tell me what happened recently.,history
+What happened in the past week?,history
+What happened in the last week?,history
+What happened in the last month?,history
+Can I see my payment history?,history
+Show me my payment history.,history
+I would like to see my payment history.,history
+Who did I pay last?,history
+Can I view a summary of my transactions?,history
+History of transactions,history
+I want to see the history of my transactions,history
+I want to see a history of my transactions,history
+My history,history
+transaction history,history
+transactions history,history
+my transaction history,history
+history of transaction,history
+my transactions history,history
+history of my transaction,history
+history of my transactions,history
+see past transactions,history
+see history of transactions,history
+see old transactions,history
+see older transactions,history
+see old transaction ,history
+see previous transactions,history
+see my transaction history,history
+see transaction history,history
+I want to get my transaction history,history
+show my transaction history,history
+show history of transactions,history
+view transactions,history
+view previous transactions,history
+view past transactions,history
+view transaction history,history
+view transactions history,history
+Can I have my transaction history,history
+show me my transaction history,history
+show previous transactions,history
+show past transactions,history
+please show transaction history,history
+please show my transaction history,history
+please show transactions history,history
+please show my transactions history,history
+get me my transaction history,history
+get my transaction history,history
+get transaction history,history
+get list of old transactions,history
+list of old transactions,history
+list of past transactions,history
+list of previous transactions,history
+transactions from before,history
+transactions from yesterday,history
+transaction from this week,history
+show my transactions made this week,history
+list of transactions,history
+show me transaction history,history
+show me transaction summary,history
+transactions on this account,history
+show transactions on this account,history
+transactions made,history
+what is my transaction history,history
+what does my transaction history look like,history
+all transactions,history
+show all transactions,history
+all transactions made,history
+complete transaction history,history
+complete transaction log,history
+transaction log,history
+full transaction history,history
+complete list of transactions,history
+complete list of transactions made,history
+all my transactions,history
+my old transactions,history
+my previous transactions,history
+Can you add a credit card,add_payment
+can you add a bank account,add_payment
+can you add a card,add_payment
+can you add a bank,add_payment
+add a Payment,add_payment
+add another way to pay,add_payment
+can you add a payment,add_payment
+I'd like to add a credit card,add_payment
+add an ach method,add_payment
+add a payment method,add_payment
+add another payment type,add_payment
+add a payment type,add_payment
+Integrate another credit card,add_payment
+integrate another bank acount,add_payment
+integrate a bank account,add_payment
+integrate a credit card,add_payment
+sync a credit card,add_payment
+sync a bank,add_payment
+use another credit card,add_payment
+use another bank account,add_payment
+change my credit card,add_payment
+change my bank account,add_payment
+add to my wallet,add_payment
+put another card in my wallet,add_payment
+attach another credit card,add_payment
+add a credit card,add_payment
+add a card,add_payment
+add credit card,add_payment
+add card,add_payment
+credit card,add_payment
+add a bank,add_payment
+add bank,add_payment
+add bank account,add_payment
+add a bank account,add_payment
+add more banks,add_payment
+add more bank accounts,add_payment
+add more cards,add_payment
+add more credit cards,add_payment
+link to credit card,add_payment
+link to card,add_payment
+link to bank account,add_payment
+link to bank  ,add_payment
+link to another card,add_payment
+link to another bank,add_payment
+can I add a card,add_payment
+can I add a bank,add_payment
+can i add a credit card,add_payment
+can i add a bank account,add_payment
+can I add more cards,add_payment
+can I add more banks,add_payment
+can I add more credit cards,add_payment
+connect to another card,add_payment
+connect to credit card,add_payment
+new credit card,add_payment
+new card,add_payment
+new bank account,add_payment
+new bank  ,add_payment
+add another card,add_payment
+add another bank,add_payment
+how do i add a payment,add_payment
+add payment method,add_payment
+how do i add a card,add_payment
+how do i add a bank,add_payment
+how do i add a credit card,add_payment
+how do I add a bank account,add_payment
+add payment  ,add_payment
+how to add card,add_payment
+how to add credit card,add_payment
+how to add bank,add_payment
+how to add bank account,add_payment
+how to add payment,add_payment
+how to add payment options,add_payment
+how to add payment method,add_payment
+how to add payment methods,add_payment
+how to add payment option ,add_payment
+help,help
+help me out,help
+what can I do,help
+what are the commands,help
+commands,help
+what are my options,help
+options,help
+can I get some help,help
+I'm lost,help
+help me,help
+I don't understand,help
+what can you do,help
+what can you do to help me,help
+what are you able to do,help
+I'm super lost,help
+please help me,help
+what things can you do,help
+what things can you help me with,help
+is there a directory?,help
+is there an index?,help
+where am I?,help
+can you show me an index,help
+can you show me a directory,help
+what can you help me with?,help
+what kinds of things can I ask you,help
+operator please,help
+operator,help
+I need help,help
+who can i contact for help,help
+who can help me,help
+who can I contact  ,help
+I need assistance,help
+help wanted,help
+I have a question,help
+I don't know where to go,help
+where do I go,help
+I don't know  ,help
+I don't know what to do,help
+what do i do ,help
+what to do,help
+i have questions,help
+question,help
+i need IT,help
+who can i talk to ,help
+who do i talk to,help
+who do I contact,help
+who do I contact for help,help
+me need help,help
+help needed,help
+phone number,help
+contact,help
+IT help,help
+help requested,help
+requesting help,help
+I want help,help
+i want assistance,help
+i want IT,help
+i want IT help,help
+help me IT,help
+remove a payment,remove_payment
+get rid of a payment type,remove_payment
+get rid of a payment,remove_payment
+remove a credit card,remove_payment
+remove a bank,remove_payment
+toss my credit card,remove_payment
+toss my bank account,remove_payment
+cut up my credit card,remove_payment
+tear up my credit card,remove_payment
+get rid of my credit card,remove_payment
+get rid of my bank account,remove_payment
+can I remove a payment,remove_payment
+I would like to remove a payment,remove_payment
+I'd like to remove a payment,remove_payment
+remove a payment type,remove_payment
+I'd like to remove a payment type,remove_payment
+I would like to remove a payment type,remove_payment
+can I remove a payment type,remove_payment
+can I remove a credit card,remove_payment
+can I remove a bank,remove_payment
+how do I remove a credit card,remove_payment
+how do I remove a bank,remove_payment
+how do I remove a bank account,remove_payment
+how do I remove a payment,remove_payment
+how do I remove something from my wallet?,remove_payment
+I'd like to setup autopay,autopay
+I would like to setup autopay,autopay
+how can I setup autopay,autopay
+can I setup autopay,autopay
+can you help me setup autopay,autopay
+setup autopay,autopay
+I'd like to setup a subscription,autopay
+I'd like to setup a payment subscription,autopay
+I'd like to setup a payment plan,autopay
+I would like to setup a subscription,autopay
+I would like to setup a payment subscription,autopay
+I would like to setup a payment plan,autopay
+how can i setup a subscription,autopay
+how can I setup a payment subscription,autopay
+how can i setup a payment plan,autopay
+can i setup a subscription,autopay
+can i setup a payment subscription,autopay
+can i setup a payment plan,autopay
+can you help me setup a subscription,autopay
+can you help me setup a payment subscription,autopay
+can you help me setup a payment plan,autopay
+setup a subscription,autopay
+setup a payment subscription,autopay
+setup a payment plan,autopay
+I'd like to setup a reoccurring payment,autopay
+I would like to setup a reoccurring payment,autopay
+how can i setup a reoccurring payment,autopay
+setup a reoccurring payment,autopay
+can you help me setup a reoccurring payment,autopay
+cancel,cancel
+go back to the main menu,cancel
+go back,cancel
+I don't want to be here,cancel
+this isn't what I wanted,cancel
+this is not what I wanted,cancel
+this isn't what I asked for,cancel
+this is not what I asked for,cancel
+go home,cancel
+I want to go home,cancel
+can you take me to the main menu,cancel
+can you take me home,cancel
+i would like to cancel this request,cancel
+I'd like to cancel this request,cancel
+exit,cancel
+exit this conversation,cancel
+main menu please,cancel
+take me to the main menu,cancel
+let me leave,cancel
+I want to return to the main menu,cancel
+return to the main menu,cancel
+return to home,cancel
+get out of here,cancel
+get out of this conversation,cancel
+leave ,cancel
+leave to the main menu,cancel
+leave for home,cancel
+phone home,cancel
+remove a payment method,remove_payment
+remove my payment method,remove_payment
+remove my credit card,remove_payment
+remove my card,remove_payment
+remove my bank account,remove_payment
+remove my bank,remove_payment
+unlink my card,remove_payment
+unlink my credit card,remove_payment
+unlink my account,remove_payment
+unlink my bank,remove_payment
+unlink my bank account,remove_payment
+unlink payment,remove_payment
+unlink a payment method,remove_payment
+unlink payment method,remove_payment
+remove payment method,remove_payment
+delete payment,remove_payment
+delete payment method,remove_payment
+delete my card,remove_payment
+delete card,remove_payment
+delete credit card,remove_payment
+delete bank,remove_payment
+delete bank account,remove_payment
+how do I delete my card,remove_payment
+how do I delete my credit card,remove_payment
+how do I remove my credit card,remove_payment
+how do I remove my card,remove_payment
+how do I remove my bank,remove_payment
+how do I remove my bank account,remove_payment
+how to delete my bank,remove_payment
+how do I delete my bank account,remove_payment
+how do I delete my bank,remove_payment
+how to delete my card,remove_payment
+how to delete my credit card,remove_payment
+how to delete my bank account,remove_payment
+how to delete bank,remove_payment
+how to delete card,remove_payment
+how to delete bank account,remove_payment
+how to delete credit card,remove_payment
+please delete my card,remove_payment
+please delete card,remove_payment
+please delete credit card,remove_payment
+please delete my credit card,remove_payment
+please remove my card,remove_payment
+please remove my credit card,remove_payment
+please remove my bank,remove_payment
+please remove my bank account,remove_payment
+please delete my bank,remove_payment
+please delete my bank account,remove_payment
+delete payment option,remove_payment
+undo payment ,remove_payment
+undo payment method,remove_payment
+remove bank ,remove_payment
+remove bank account,remove_payment
+remove my payment options,remove_payment
+remove my payment option ,remove_payment
+remove card,remove_payment
+remove credit card,remove_payment
+remove payment option,remove_payment
+remove payment options,remove_payment
+i want to set up autopay,autopay
+set up autopay,autopay
+autopay setup,autopay
+i would like to set up autopay,autopay
+setting up autopay,autopay
+start autopay,autopay
+help me set up autopay,autopay
+help set up autopay,autopay
+help with setting up autopay,autopay
+help with autopay set up,autopay
+help me with autopay,autopay
+autopay  ,autopay
+autopay options,autopay
+can i set up autopay,autopay
+how to set up autopay,autopay
+pay automatically,autopay
+pay every month,autopay
+automatically pay,autopay
+set payment,autopay
+set autopay,autopay
+set autopayment,autopay
+i want to set up auto payment,autopay
+auto payment,autopay
+pay my account automatically,autopay
+automatic payment,autopay
+automatic payments,autopay
+make automatic payments,autopay
+make payment automatically,autopay
+charge me automatically,autopay
+routine payment,autopay
+how do I set up autopay,autopay
+how do I set up auto payments,autopay
+how to set up auto payments,autopay
+can i set up auto payments,autopay
+routine payments,autopay
+auto payment options,autopay
+how to pay automatically,autopay
+how to make routine payments,autopay
+set up automatic payments,autopay
+how do I set up automatic payments,autopay
+can I make automatic payments,autopay
+can I make auto payments,autopay
+help me with automatic payments,autopay
+help me set up automatic payments,autopay
+making automatic payments,autopay
+making autopay,autopay
+ways to pay,autopay
+ways to make payments,autopay
+sign up for autopay,autopay
+signing up for autopay,autopay
+sign up for auto payments,autopay
+sigining up for auto payments,autopay
+what are other ways to pay,autopay
+Can I make payments automatically,autopay
+how do I make payments automatically,autopay
+how do I make auto payments,autopay
+main menu,cancel
+menu options,cancel
+back,cancel
+home ,cancel
+home screen,cancel
+previous menu,cancel
+original menu,cancel
+previous menu options,cancel
+return to main menu,cancel
+return to previous menu,cancel
+go back to main menu,cancel
+go back to previous selection,cancel
+previous selection,cancel
+take me back,cancel
+return to previous selection,cancel
+return to main selection,cancel
+return to original menu,cancel
+can I go back,cancel
+Can i return to the main menu,cancel
+take me back to the main menu,cancel
+show me the main menu,cancel
+show me main menu,cancel
+show main menu,cancel
+take me back to previous menu,cancel
+take me back to the previous menu,cancel
+take me back to the previous selections,cancel
+take me back to teh previous selection ,cancel
+start over,cancel
+delete transaction,cancel
+can i start over,cancel
+can you start me over,cancel
+can you take me back,cancel
+delete all,cancel
+scratch that,cancel
+forget it,cancel
+redo,cancel
+i want to start over,cancel
+i want to redo,cancel
+i want to return to home,cancel
+i want to return to the home screen,cancel
+begin again,cancel
+return to step 1,cancel
+return to step one,cancel
+start me over,cancel
+undo,cancel
+undo all,cancel
+redo all,cancel
+redo completely,cancel
+lets do get help,help
