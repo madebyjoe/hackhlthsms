@@ -1,5 +1,7 @@
-# Server to accept user sentences and resolve to a given set of intents
+# intent_model
+Server to accept user sentences and resolve to a given set of intents
 
+## Setup
 To install all python dependencies run:
 ```
 pip install -r requirements.txt
