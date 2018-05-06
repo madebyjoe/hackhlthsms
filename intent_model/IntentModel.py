@@ -33,10 +33,14 @@ class IntentModel:
     def load_word_vectors(self):
         """ Load word Stanford glove vectors and assign word vector dictionary to static variable"""
 
+        self.word_vectors = pickle.load(open('word_vectors/'+ 'glove.pk', 'rb'))
+
+    def load_word_vectors_from_txt(self):
+        """ Load word Stanford glove vectors and assign word vector dictionary to static variable"""
+
         word_vectors = {}
 
         for vec in open('word_vectors/glove.6b.300d.txt'):
-
             spl = vec.strip().split()
             word_vectors[spl[0]] = np.array(spl[1:], dtype=float)
 
