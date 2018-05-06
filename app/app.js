@@ -144,6 +144,7 @@ app.post("/signup", userController.postSignup);
 app.get("/contact", contactController.getContact);
 app.post("/contact", contactController.postContact);
 app.get("/account", passportConfig.isAuthenticated, userController.getAccount);
+app.post("/sms", apiController.handleSms);
 app.post(
   "/account/profile",
   passportConfig.isAuthenticated,
@@ -178,6 +179,7 @@ app.get(
   passportConfig.isAuthorized,
   apiController.getSteam
 );
+app.post("/api/sms", apiController.handleSms);
 app.get("/api/softheon", apiController.createWallet);
 app.get("/api/stripe", apiController.getStripe);
 app.post("/api/stripe", apiController.postStripe);

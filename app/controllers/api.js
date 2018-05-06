@@ -11,6 +11,8 @@ const twilio = require("twilio")(
   process.env.TWILIO_SID,
   process.env.TWILIO_TOKEN
 );
+const MessagingResponse = require("twilio").twiml.MessagingResponse;
+
 const { SoftheonWalletApi } = require("../lib/softheon/softheonWalletAPI");
 const Linkedin = require("node-linkedin")(
   process.env.LINKEDIN_ID,
@@ -41,6 +43,18 @@ exports.getApi = (req, res) => {
   res.render("api/index", {
     title: "API Examples"
   });
+};
+
+/**
+ * POST /sms
+ */
+exports.handleSms = () => {
+  const twiml = new MessagingResponse();
+
+  twiml.message("The Robots are coming! Head for the hills!");
+
+  res.writeHead(200, { "Content-Type": "text/xml" });
+  res.end(twiml.toString());
 };
 
 /**
