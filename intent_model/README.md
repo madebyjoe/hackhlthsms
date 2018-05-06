@@ -18,3 +18,4 @@ Send post requests to http://localhost:8000/classify with a json in the format:
     "sentence": user_sentence_as_string
 }
 ```
+Download word vectors from http://nlp.stanford.edu/data/glove.6B.zip and extract into word_vectors/
